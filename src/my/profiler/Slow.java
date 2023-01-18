@@ -16,7 +16,6 @@ public class Slow {
         return l;
     }
 
-
     static long fibFast(long i) {
         if (i < 2) return i;
         int a = 0, b = 1, c = 0;
