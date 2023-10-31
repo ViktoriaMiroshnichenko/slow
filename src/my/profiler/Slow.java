@@ -5,10 +5,6 @@ public class Slow {
         for (int i = 1; i < 50; i++) {
 
 
-
-
-
-
             long start = System.currentTimeMillis();
             System.out.println("Fibonacci recursive " + i + " = " + fibRecursive(i) + " took " + (System.currentTimeMillis() - start) + "ms");
             start = System.currentTimeMillis();
