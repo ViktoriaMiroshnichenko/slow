@@ -23,13 +23,13 @@ for conflict
 @param i The index of the Fibonacci number to calculate1
 one more conflict 4.10 11 45
 
-30.10
+9484.8575
 for conflict
 In computing and technology, a transition may 
 signify a change from one system, version, 
 or technology to another. For example, transitioning from traditional software to cloud-based solutions.
 conflict 16 43 github
-new new new new 85766679303847 jfjfjfjf
+conflict line
 new conflict 10 4 76543 75858696979
 new changes 987 655 
 new line 16^42
