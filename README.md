@@ -8,8 +8,6 @@ The main method calculates and prints Fibonacci numbers using both recursive and
 Calculates the Fibonacci number recursively.
 Calculates the Fibonacci number using a fast iterative method.
 
-
-
 @param i The index of the Fibonacci number to calculate
 @return The calculated Fibonacci number
 
