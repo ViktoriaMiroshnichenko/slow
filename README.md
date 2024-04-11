@@ -1,3 +1,4 @@
+<img width="511" alt="image" src="https://github.com/ViktoriaMiroshnichenko/slow/assets/133248817/3ad5280e-b4ac-4b9b-8152-a2721cf304cf">The Slow class demonstrates the calculation of Fibonacci numbers using both recursive
 and fast iterative methods. It prints the calculated Fibonacci numbers and the time
 taken for each calculation.
 
@@ -19,24 +20,16 @@ new line 16^42
 for conflict
 @param i The index of the Fibonacci number to calculate1
 one more conflict 4.10 11 45
-
-9484.8575
-for conflict 5647
+for conflict
 In computing and technology, a transition may 
 signify a change from one system, version, 
 or technology to another. For example, transitioning from traditional software to cloud-based solutions.
 conflict 16 43 github
-new new1 new conflict 345.8476
-
-
-new changes 987 655 
+new new new conflict 345
+new conflict 10 4 76543 75858696979
+new changes 987 
 new line 16^42
-new-new 8765
 
-The situation seems complicated, but we will find a solution.
-"Resembles" and "seems" are both words used to convey similarity or likeness, but they are used in different contexts.
-f you're rebasing commits that have been pushed to a remote repository, you may need to force-push the changes:
-new-new conflict 25 12:59 github
 
 "Resembles" is often used when there is a visual or noticeable similarity between two things.
 f you're rebasing commits that have been pushed to a remote repository, you may need to force-push the changes:
