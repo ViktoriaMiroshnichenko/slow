@@ -75,23 +75,12 @@ new-new conflict 5 18:45
 new-new conflict 25 12:59 github
 
 new conflict 29 18 25958588509 85838743
-
-
-
-
-
-
-
-
 The situation seems complicated, but we will find a solution. For conflict
-
-
-30.10
 VikusM: The phrase "catch your drift" is an informal expression that means to understand or comprehend what someone is saying or suggesting, especially when their message is indirect or not explicitly stated. 
-new text 2 23.08
+new text 2 23.08.9876
 
 new conflict 4 13:26
-new text 2 23.08
+new text 2 23.08.9876
 
 new conflict 4 13:26
 
