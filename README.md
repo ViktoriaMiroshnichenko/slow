@@ -79,7 +79,7 @@ new conflict 29 18 25958588509 85838743
 
 
 
-
+New line for conflicts
 
 
 
@@ -93,7 +93,7 @@ new text 2 23.08
 new conflict 4 13:26
 new text 2 23.08
 
-new conflict 4 13:26
+new conflict 4 13:26.9865
 
 new-new conflict 5 18:50
 
