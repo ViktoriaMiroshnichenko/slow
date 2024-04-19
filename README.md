@@ -61,9 +61,6 @@ new conflict from IDEA 17 14 10.11
 one more conflict 4.10 11 45
 
 30.10
-VikusM: The phrase "catch your drift" is an informal expression that means to understand or comprehend what someone is saying or suggesting, especially when their message is indirect or not explicitly stated. 
-new text 2 23.08
-
 new conflict 4 13:26
 new text 2 23.08
 
