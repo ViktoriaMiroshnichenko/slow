@@ -63,7 +63,6 @@ f you're rebasing commits that have been pushed to a remote repository, you may 
 New text from Idea 18 06
 new text 13 35 16.11
 New text from Idea 16.11
-new conflict from IDEA 17 14 10.11
 one more conflict 4.10 11 45
 new text 2 23.08
 
