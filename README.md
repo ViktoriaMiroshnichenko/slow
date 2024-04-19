@@ -51,9 +51,9 @@ new text 18 04
 new text 17 14 10.11
 new text 2 23.08
 
-new conflict 4 13:26
+new conflict 4 13:25
 
-conflict-conflict with dirty index
+conflict-conflict with dirty indexes
 f you're rebasing commits that have been pushed to a remote repository, you may need to force-push the changes:
 new-new conflict 25 12:59 github
 
