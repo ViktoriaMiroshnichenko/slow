@@ -82,19 +82,13 @@ new text 2 23.08.9876
 new conflict 4 13:26
 new text 2 23.08.9876
 
-new conflict 4 13:26
-
+text text
 new-new conflict 5 18:50
 
-new-new conflict13%35
-
-new-new conflict 25 12:59 github
-
-new conflict 16 13 37
 
 new text 2 23.08
 
 new conflict 4 13:26
 new text 2 23.08
-
+New text
 new conflict 4 13:26
