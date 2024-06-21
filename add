@@ -7,10 +7,6 @@ the file(s), just show
 if they exist and/or will 
 be ignored.
 
--v
---verbose
-Be verbose.
-
 -f
 --force
 Allow adding otherwise 
