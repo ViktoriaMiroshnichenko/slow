@@ -21,8 +21,6 @@ New text from Idea 16.11one more conflict 4.10 11 45
 new line 16^42
 17 14 for 123conflict
 
-
-
 for conflict578457
 @param i The index of the Fibonacci number to calculate1
 one more conflict 4.10 11 45
@@ -38,7 +36,7 @@ new line 16^4
 "Resembles" is often used when there is a visual or noticeable similarity between two things.
 f you're rebasing commits that have been pushed to a remote repository, you may need to force-push the changes:
 
-new-new conflict13%35
+
 one more conflict
 Changes made:Improved Functionality:
 Moved the Fibonacci functions (fibRecursive and fibFast) inside a nested Slow class to better organize the code.
