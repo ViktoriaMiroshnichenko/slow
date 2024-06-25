@@ -9,7 +9,7 @@ be ignored.
 
 -v
 --verbose
-Allow adding otherwise  ignored files.
+Allow adding otherwise  ignored all files.
 
 -f
 --force
