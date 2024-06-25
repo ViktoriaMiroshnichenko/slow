@@ -9,9 +9,7 @@ be ignored.
 
 -v
 --verbose
-Increase the amount of 124443
-Increase the amount of
-information output by the command
+Allow adding otherwise  ignored all files.
 
 -f
 --force
