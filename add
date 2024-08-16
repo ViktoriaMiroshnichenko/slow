@@ -9,7 +9,8 @@ be ignored.
 
 -v
 --verbose
-Be verbose.
+allows to include a commit message
+directly in the command.
 
 -f
 --force
