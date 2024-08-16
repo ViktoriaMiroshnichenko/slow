@@ -9,7 +9,8 @@ be ignored.
 
 -v
 --verbose
-Records changes to the repository
+Increase the amount of information
+output by the command
 
 -f
 --force
