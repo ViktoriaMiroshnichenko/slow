@@ -9,7 +9,7 @@ be ignored.
 
 -v
 --verbose
-Be verbose.
+Records changes to the repository
 
 -f
 --force
