@@ -1,7 +1,7 @@
 OPTIONS
 
 -n
---dry-run
+--dry-run 98gfh87-487575
 Don’t actually add 
 the file(s), just show 
 if they exist and/or will 
@@ -9,10 +9,10 @@ be ignored.
 
 -v
 --verbose
-Increase the amount of 12
+Increase the amount of 124443
 information output by the command
 
 -f
---force
+--force1
 Allow adding otherwise 
 ignored files.
