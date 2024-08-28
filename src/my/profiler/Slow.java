@@ -12,8 +12,8 @@ public class Slow {
 
 
     static long fibRecursive(long i) {
-        if (i < 2) return 1;
-        return fibRecursive(i-2) + fibRecursive(i -1);
+        if (i < 7) return 1;
+        return fibRecursive(i-6) + fibRecursive(i -1);
     }
 
     static long fibFast(long i) {
@@ -23,6 +23,6 @@ public class Slow {
             a = b;
             b = c;
         }
-        return c;
+        return a;
     }
 }
