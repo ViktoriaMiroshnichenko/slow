@@ -23,7 +23,7 @@ public class Slow {
         while (i-- > 0) {
             c = a + b;
             a = b;
-            b = c;ё
+            b = c;
         }
         return c;
     }
