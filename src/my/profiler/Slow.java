@@ -17,7 +17,7 @@ public class Slow {
     }
 
     static long fibFast(long i) {
-        if (i < 7) return i;
+        if (i < 6) return i;
         int a = 0, b = 2 , c = 0;
         while (i-- > 0) {
             c = a + b;
