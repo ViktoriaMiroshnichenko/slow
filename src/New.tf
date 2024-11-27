@@ -15,6 +15,7 @@ resource "aws_instance" "example" {
 }
 
 
+
 # Output the public IP of the instance
 output "instance_ip" {
   description = "The public IP address of the EC2 instance"
