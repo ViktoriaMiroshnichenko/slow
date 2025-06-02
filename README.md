@@ -22,8 +22,10 @@ for conflict578457
 one more conflict 4.10 11 45
 for conflict858598475775
 In computing and technology, a transition may 
+signify a change from one system, version, 
 or technology to another. For example, transitioning from traditional software to cloud-based solutions.
-new new new conflict 
+conflict 16 43 github
+new new new conflict 345678678678
 new conflict 10 4 76543 75858696979
 new changes 987 
 new line 16^4
