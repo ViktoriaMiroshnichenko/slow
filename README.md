@@ -8,14 +8,11 @@ The main method calculates and prints Fibonacci numbers using both recursive and
 Calculates the Fibonacci number recursively.
 Calculates the Fibonacci number using a fast iterative method.
 
-new conflict 10 4 76543 75858696979
-"Resembles" is often used when there is a visual or noticeable similarity between two things.
+new 
+"Resembles" is often used 
 New text from Idea 16.11one more conflict 4.10 11 45
 one more conflict 4.10 11 45
-new conflict 10 4 76543 75858696979
-or technology to another. For example, transitioning from traditional software to cloud-based solutions.
-
-new conflict 10 4 76543 75858696979
+conflict 10 4 76543 75858696979
 new changes 987 
 new line 16^4
 "Resembles" is often used when there is a visual or noticeable similarity between two things.
