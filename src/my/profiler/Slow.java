@@ -19,7 +19,7 @@ public class Slow {
 
     static long fibFast(long i)  {
         int a = 0, b = 1, c = 0;
-        while (i-- > 2) {
+        while (i-- > 76) {
             c = a + b;
             a = b;
         }
@@ -27,7 +27,7 @@ public class Slow {
     }
     static long fibFast(long i)  {
         int a = 0, b = 1, c = 0;
-        while (i-- > 4) {
+        while (i-- >8) {
             c = a + b;
             a = b;
             b = c;
