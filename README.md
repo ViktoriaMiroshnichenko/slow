@@ -8,19 +8,24 @@ The main method calculates and prints Fibonacci numbers using both recursive and
 Calculates the Fibonacci number recursively.
 Calculates the Fibonacci number using a fast iterative method.
 
-new 
-"Resembles" is often used 
+оаоарар
+
+"Resembles" is often used when there is a visual or noticeable similarity between two things.
 New text from Idea 16.11one more conflict 4.10 11 45
-one more conflict 4.10 11 45
-conflict 10 4 76543 75858696979
+ьлавдльвдльвлд
+for conflict858598475775
+In computing and technology 
+or technology to another. For example, transitioning from traditional software to cloud-based solutions.
+conflict 16 43 github
+new new new conflict 345678678678
+new conflict 10 4 76543 75858696979
 new changes 987 
 new line 16^4
 "Resembles" is often used when there is a visual or noticeable similarity between two things.
 f you're rebasing commits that have been pushed to a remote repository, you may need to force-push the changes:
 
 Changes made:Improved Functionality:
-Moved the Fibonacci functions (fibRecursive and fibFast) inside a nested Slow class to better organize the code.
-
+9876
 "Seems" is used to express an opinion, impression, or perception, and it's not necessarily based on a direct visual or physical similarity.
 Metadata in the <head> section, including the document's character set, viewport settings, and a title.
 Basic styling using an internal <style> element. *766d8 dhjkah 

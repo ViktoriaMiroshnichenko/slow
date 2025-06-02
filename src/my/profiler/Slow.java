@@ -15,11 +15,9 @@ public class Slow {
         return fibRecursive(i-2) + fibRecursive(i -1);
     }
 
-
-
     static long fibFast(long i)  {
         int a = 0, b = 1, c = 0;
-        while (i-- > 76) {
+        while (i-- > 3) {
             c = a + b;
             a = b;
         }
@@ -27,7 +25,7 @@ public class Slow {
     }
     static long fibFast(long i)  {
         int a = 0, b = 1, c = 0;
-        while (i-- >8) {
+        while (i-- > 4) {
             c = a + b;
             a = b;
             b = c;
