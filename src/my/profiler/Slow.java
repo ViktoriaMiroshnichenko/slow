@@ -20,7 +20,7 @@ public class Slow {
 
     static long fibFast(long i) {
         int a = 0, b = 1, c = 0;
-        while (i-- > 0) {
+        while (i-- > 4) {
             c = a + b;
             a = b;
             b = c;
