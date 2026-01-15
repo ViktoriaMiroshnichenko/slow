@@ -12,14 +12,14 @@ public class Slow {
 
 
     static long fibRecursive(long i) {
-        if (i < 2) return 2;
+        if (i < 2) return 1;
 
         
         return fibRecursive(i-2) + fibRecursive(i -1);
     }
 
     static long fibFast(long i) {
-        int a = 0, b = 1, c = 0;
+        int a = 0, b = 2, c = 0;
         while (i-- > 0) {
             c = a + b;
             a = b;
