@@ -43,13 +43,6 @@ new conflict 4 13:25
 conflict-conflict with dirty indexes
 f you're rebasing commits that have been pushed to a remote repository, you may need to force-push the changes:
 new-new conflict 25 12:59 github
-
-new conflict 29 18 25
-new conflict 1 15 15
-f you're rebasing commits that have been pushed to a remote repository, you may need to force-push the changes:
-New text from Idea 18 06
-new text 13 35 16.11
-New text from Idea 16.11
 one more conflict 4.10 11 45
 new text 2 23.08
 
