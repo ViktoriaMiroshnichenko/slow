@@ -17,10 +17,10 @@ for conflict858598474646455
 In computing and technology 
 or technology to another. For example, transitioning from traditional software to cloud-based solutions.
 
-new new new conflict 345678678678
+Smth new
 new conflict 10 4 76543 75858696979
 new changes 987 
-new line 16^4
+new line 16^4098
 "Resembles" is often used when there is a visual or noticeable similarity between two things.
 f you're rebasing commits that have been pushed to a remote repository, you may need to force-push the changes:
 

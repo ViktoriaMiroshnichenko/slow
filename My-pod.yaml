@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: title
   labels:
-    role: title
+    role: titletitle
 spec:
   containers:
     - name: title
@@ -11,7 +11,7 @@ spec:
       imagePullPolicy: IfNotPresent
       ports:
         - name: title
-          containerPort: 80
+          containerPort: 90
           protocol: TCP
   restartPolicy: Always
   
