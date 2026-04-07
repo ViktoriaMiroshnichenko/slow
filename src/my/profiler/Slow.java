@@ -1,30 +1,20 @@
 package my.profiler;
 
 public class Slow {
-    public static void main(String[] args) {
-        for (int i = 1; i < 50; i++) {
-            long start = System.currentTimeMillis();
-            System.out.println("Fibonacci recursive " + i + " = " + fibRecursive(i) + " took " + (System.currentTimeMillis() - start) + "ms");
-            start = System.currentTimeMillis();
-            System.out.println("Fibonacci fast      " + i + " = " + fibFast(i) + " took " + (System.currentTimeMillis() - start) + "ms");
+    private static volatile long sink;
+
+    public static void main(String[] args) throws InterruptedException {
+        LoadConfig config = new LoadConfig(39, 50, 5, 50);
+
+        for (int round = 1; round <= config.getRounds(); round++) {
+            for (int i = 0; i < config.getRepeatsPerRound(); i++) {
+                sink = Fibonacci.fibRecursive(config.getNumber());
+            }
+
+            ConsoleReporter.printRound(round, config.getRounds(), sink);
+            Thread.sleep(config.getSleepMillis());
         }
-    }
 
-
-    static long fibRecursive(long i) {
-        if (i < 2) return 1;
-        long l = fibRecursive(i - 2) + fibRecursive(i - 1);
-        return l;
-    }
-
-    static long fibFast(long i) {
-        if (i < 2) return i;
-        int a = 0, b = 1, c = 0;
-        while (i-- > 0) {
-            c = a + b;
-            a = b;
-            b = c;ё
-        }
-        return c;
+        ConsoleReporter.printDone(sink);
     }
 }
