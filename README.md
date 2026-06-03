@@ -1,116 +1,48 @@
+# Slow Project
 
-The main method calculates and prints Fibonacci numbers using both recursive and fast iterative methods for a range of values.
+A Java demo application that compares recursive and iterative approaches to computing Fibonacci numbers, measuring execution time for each method.
 
+## Description
 
-Calculates the Fibonacci number recursively.
-Calculates the Fibonacci number using a fast iterative method.
+This project demonstrates the performance difference between a naive recursive Fibonacci algorithm and an optimized iterative one. It calculates Fibonacci numbers for indices 1 through 50 and prints the results along with the time taken by each method.
 
+The recursive approach has exponential time complexity O(2^n), making it noticeably slow for larger values — hence the project name **Slow**.
 
+## Project Structure
 
-@param i The index of the Fibonacci number to calculate
-@return The calculated Fibonacci number
+```
+slow/
+├── src/
+│   └── my/profiler/
+│       └── Slow.java       # Main application
+├── README.md
+└── Slow.iml
+```
 
-"Resembles" is often used when there is a visual or noticeable similarity between two things.
-New text from Idea 16.11one more conflict 4.10 11 45
-11 45 for conflict
+## Methods
 
-yjdsq ghjcnj rjyakbrn d vth;t
-for conflict
-@param i The index of the Fibonacci number to calculate1
-one more conflict 4.10 11 45
+- **`fibRecursive(long i)`** — Computes the Fibonacci number recursively. Simple but extremely slow for large indices.
+- **`fibFast(long i)`** — Computes the Fibonacci number using a fast iterative approach with O(n) time complexity.
 
-30.10
-for conflict
-In computing and technology, a transition may 
-signify a change from one system, version, 
-or technology to another. For example, transitioning from traditional software to cloud-based solutions.
-conflict 16 43 github
-new new new new 85766679303847 jfjfjfjf
-new conflict 10 4 76543 75858696979
-new changes 987 655 
-new line 16^42
+## How to Run
 
-The situation seems complicated, but we will find a solution.
-"Resembles" and "seems" are both words used to convey similarity or likeness, but they are used in different contexts.
-f you're rebasing commits that have been pushed to a remote repository, you may need to force-push the changes:
-new-new conflict 25 12:59 github
+Compile and run using the command line:
 
-"Resembles" is often used when there is a visual or noticeable similarity between two things.
-f you're rebasing commits that have been pushed to a remote repository, you may need to force-push the changes:
+```bash
+javac -d out src/my/profiler/Slow.java
+java -cp out my.profiler.Slow
+```
 
-new-new conflict13%35
-one more conflict
-Changes made:Improved Functionality:
-Moved the Fibonacci functions (fibRecursive and fibFast) inside a nested Slow class to better organize the code.
-resembles vs seem 98 7 f8f
-"Seems" is used to express an opinion, impression, or perception, and it's not necessarily based on a direct visual or physical similarity.
-Metadata in the <head> section, including the document's character set, viewport settings, and a title.
-Basic styling using an internal <style> element. *766d8 dhjkah 
-Sections for a header, navigationBasic styling using an internal <style> element., main content
-Links within the navigation (<nav>) that anchor to different sections in the main content.
-Sections (<section>) with headings (<h2>) and paragraphs (<p>).
-A simple footer.999595959
-A simple footer.
-new text 18 04
-new text 17 14 10.11
-new text 2 23.08
+Or open the project in IntelliJ IDEA and run the `Slow` class directly.
 
-new conflict 4 13:26
+## Example Output
 
-conflict-conflict with dirty index
-f you're rebasing commits that have been pushed to a remote repository, you may need to force-push the changes:
-new-new conflict 25 12:59 github
-
-new conflict 29 18 25
-new conflict 1 15 15
-f you're rebasing commits that have been pushed to a remote repository, you may need to force-push the changes:
-New text from Idea 18 06
-new text 13 35 16.11
-New text from Idea 16.11
-new conflict from IDEA 17 14 10.11
-one more conflict 4.10 11 45
-new text 2 23.08
-
-new conflict 4 13:26
-
-new-new conflict 5 18:50
-
-new-new conflict 5 18:45
-
-new-new conflict 25 12:59 github
-
-new conflict 29 18 25958588509 85838743
-
-
-
-
-
-
-
-
-The situation seems complicated, but we will find a solution. For conflict
-
-
-30.10
-VikusM: The phrase "catch your drift" is an informal expression that means to understand or comprehend what someone is saying or suggesting, especially when their message is indirect or not explicitly stated. 
-new text 2 23.08
-
-new conflict 4 13:26
-new text 2 23.08
-
-new conflict 4 13:26
-
-new-new conflict 5 18:50
-
-new-new conflict13%35
-
-new-new conflict 25 12:59 github
-
-new conflict 16 13 37
-
-new text 2 23.08
-
-new conflict 4 13:26
-new text 2 23.08
-
-new conflict 4 13:26
+```
+Fibonacci recursive 1 = 1 took 0ms
+Fibonacci fast      1 = 1 took 0ms
+Fibonacci recursive 2 = 2 took 0ms
+Fibonacci fast      2 = 1 took 0ms
+...
+Fibonacci recursive 40 = 165580141 took 1023ms
+Fibonacci fast      40 = 102334155 took 0ms
+```
