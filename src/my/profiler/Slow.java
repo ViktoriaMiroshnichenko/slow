@@ -2,7 +2,7 @@ package my.profiler;
 
 public class Slow {
     public static void main(String[] args) {
-        for (int i = 1; i < 51; i++) {
+        for (int i = 1; i <= 30; i++) {
             long start = System.currentTimeMillis();
             System.out.println("Fibonacci recursive " + i + " = " + fibRecursive(i) + " took " + (System.currentTimeMillis() - start) + "ms");
             start = System.currentTimeMillis();

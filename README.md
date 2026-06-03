@@ -1,6 +1,6 @@
 # Slow Project
 
-A Java demo application that compares recursive and iterative approaches to computing Fibonacci numbers, measuring execution time for each method.
+A Java performance comparison tool for Fibonacci number computation using recursive and iterative methods.
 
 ## Description
 
