@@ -1,29 +1,102 @@
 package my.profiler;
 
+import my.profiler.workload.Workload;
+import my.profiler.workload.Workloads;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class Slow {
     private static volatile long sink;
 
     public static void main(String[] args) throws InterruptedException {
-        LoadConfig config = new LoadConfig(39, 120, 3, 100);
-
-        System.out.println("Starting Fibonacci load test for number: " + config.getNumber());
-        long startTime = System.currentTimeMillis();
-
-        boolean isRecursive = args.length == 0 || !"iterative".equalsIgnoreCase(args[0]);
-
-        for (int round = 1; round <= config.getRounds(); round++) {
-            for (int i = 0; i < config.getRepeatsPerRound(); i++) {
-                if (isRecursive) {
-                    sink = Fibonacci.fibRecursive(config.getNumber());
-                } else {
-                    sink = Fibonacci.fibIterative(config.getNumber());
-                }
-            }
-
-            ConsoleReporter.printRound(round, config.getRounds(), sink);
-            Thread.sleep(config.getSleepMillis());
+        if (LoadConfig.isHelpRequested(args)) {
+            ConsoleReporter.printUsage();
+            return;
         }
-        long totalTime = System.currentTimeMillis() - startTime;
-        ConsoleReporter.printDone(sink);
+
+        LoadConfig config;
+        Workload workload;
+        try {
+            config = LoadConfig.fromArgs(args);
+            workload = Workloads.create(config.getWorkloadName());
+        } catch (IllegalArgumentException e) {
+            ConsoleReporter.printError(e.getMessage());
+            System.exit(1);
+            return;
+        }
+        config = config.withNumberDefault(workload.defaultNumber());
+
+        ConsoleReporter.printHeader(config, workload);
+
+        RoundStats stats = new RoundStats();
+        // Single threaded runs stay on the main thread, so the profile shows no pool machinery.
+        ExecutorService pool = config.getThreads() > 1 ? newPool(config.getThreads()) : null;
+        long startTime = System.nanoTime();
+        try {
+            for (int round = 1; round <= config.getRounds(); round++) {
+                long roundStart = System.nanoTime();
+                if (pool == null) {
+                    runIterations(workload, config);
+                } else {
+                    runIterationsInParallel(pool, workload, config);
+                }
+                long roundNanos = System.nanoTime() - roundStart;
+
+                stats.record(roundNanos);
+                ConsoleReporter.printRound(round, config.getRounds(), sink, roundNanos);
+                Thread.sleep(config.getSleepMillis());
+            }
+        } finally {
+            if (pool != null) {
+                pool.shutdownNow();
+            }
+        }
+        long totalNanos = System.nanoTime() - startTime;
+
+        ConsoleReporter.printSummary(config, workload, stats, totalNanos, sink);
+    }
+
+    private static void runIterations(Workload workload, LoadConfig config) {
+        for (int i = 0; i < config.getRepeatsPerRound(); i++) {
+            sink = workload.runIteration(config.getNumber());
+        }
+    }
+
+    private static void runIterationsInParallel(ExecutorService pool, Workload workload, LoadConfig config)
+            throws InterruptedException {
+        List<Callable<Void>> tasks = new ArrayList<>();
+        for (int thread = 0; thread < config.getThreads(); thread++) {
+            tasks.add(() -> {
+                runIterations(workload, config);
+                return null;
+            });
+        }
+
+        for (Future<Void> future : pool.invokeAll(tasks)) {
+            try {
+                future.get();
+            } catch (ExecutionException e) {
+                throw new IllegalStateException("Workload '" + workload.name() + "' failed", e.getCause());
+            }
+        }
+    }
+
+    private static ExecutorService newPool(int threads) {
+        AtomicInteger counter = new AtomicInteger();
+        ThreadFactory factory = runnable -> {
+            // Named threads make the profiler's thread list readable.
+            Thread thread = new Thread(runnable, "slow-worker-" + counter.incrementAndGet());
+            thread.setDaemon(true);
+            return thread;
+        };
+        return Executors.newFixedThreadPool(threads, factory);
     }
 }
