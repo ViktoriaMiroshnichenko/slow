@@ -37,7 +37,7 @@ public class Slow {
         ConsoleReporter.printHeader(config, workload);
 
         RoundStats stats = new RoundStats();
-        // Single threaded runs stay on the main thread, so the profile shows no pool machinery.
+        // Use a thread pool only when threads > 1; single-threaded mode runs inline.
         ExecutorService pool = config.getThreads() > 1 ? newPool(config.getThreads()) : null;
         long startTime = System.nanoTime();
         try {

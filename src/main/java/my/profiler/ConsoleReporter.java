@@ -7,13 +7,16 @@ import java.util.Locale;
 
 public class ConsoleReporter {
     public static void printHeader(LoadConfig config, Workload workload) {
-        System.out.println("Starting '" + workload.name() + "' load: --n=" + config.getNumber()
-                + " --rounds=" + config.getRounds()
-                + " --repeats=" + config.getRepeatsPerRound()
-                + " --threads=" + config.getThreads()
-                + " --sleep=" + config.getSleepMillis());
+        StringBuilder sb = new StringBuilder();
+        sb.append("Starting '").append(workload.name()).append("' load:")
+          .append(" --n=").append(config.getNumber())
+          .append(" --rounds=").append(config.getRounds())
+          .append(" --repeats=").append(config.getRepeatsPerRound())
+          .append(" --threads=").append(config.getThreads())
+          .append(" --sleep=").append(config.getSleepMillis());
+        System.out.println(sb);
         if (config.getThreads() == 1 && "lock".equals(workload.name())) {
-            System.out.println("Hint: the lock workload only contends with --threads=2 or more.");
+            System.out.println("WARNING: the lock workload only contends with --threads=2 or more.");
         }
     }
 
@@ -67,7 +70,7 @@ public class ConsoleReporter {
     }
 
     public static void printError(String message) {
-        System.err.println("Error: " + message);
+        System.err.printf("Error: %s%n", message);
         System.err.println("Run with --help to see the available options.");
     }
 
