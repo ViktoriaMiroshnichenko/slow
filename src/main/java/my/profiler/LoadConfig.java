@@ -27,6 +27,15 @@ public class LoadConfig {
         this.threads = threads;
     }
 
+    public static boolean isHelpRequested(String[] args) {
+        for (String arg : args) {
+            if ("--help".equals(arg) || "-h".equals(arg)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     /**
      * Parses the command line. Every option is optional; the defaults reproduce the
      * original behaviour of this project: recursive Fibonacci of 39, single threaded.
@@ -53,8 +62,8 @@ public class LoadConfig {
             }
 
             int separator = arg.indexOf('=');
-            if (!arg.startsWith("--") || separator < 0) {
-                throw new IllegalArgumentException("Unexpected argument '" + arg + "', options look like --name=value");
+            if (!arg.startsWith("--") || separator <= 2) {
+                throw new IllegalArgumentException("Unexpected argument '" + arg + "', expected --name=value");
             }
 
             String name = arg.substring(2, separator);
@@ -84,31 +93,6 @@ public class LoadConfig {
         }
 
         return new LoadConfig(workloadName, number, rounds, repeatsPerRound, sleepMillis, threads);
-    }
-
-    public static boolean isHelpRequested(String[] args) {
-        for (String arg : args) {
-            if ("--help".equals(arg) || "-h".equals(arg)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private static long parseBounded(String name, String value, long minimum) {
-        long parsed;
-        try {
-            parsed = Long.parseLong(value);
-        } catch (NumberFormatException e) {
-            throw new IllegalArgumentException("Option --" + name + " expects a number but got '" + value + "'");
-        }
-        if (parsed < minimum) {
-            throw new IllegalArgumentException("Option --" + name + " must be at least " + minimum + " but was " + parsed);
-        }
-        if (parsed > Integer.MAX_VALUE) {
-            throw new IllegalArgumentException("Option --" + name + " is too large: " + parsed);
-        }
-        return parsed;
     }
 
     /** Same configuration, but with {@code --n} filled in from the workload when the user left it out. */
@@ -146,5 +130,31 @@ public class LoadConfig {
     /** Iterations across the whole run: every thread does {@code repeatsPerRound} of them each round. */
     public long getTotalIterations() {
         return (long) rounds * threads * repeatsPerRound;
+    }
+
+    @Override
+    public String toString() {
+        return "LoadConfig{workload=" + workloadName
+                + ", n=" + number
+                + ", rounds=" + rounds
+                + ", repeats=" + repeatsPerRound
+                + ", sleep=" + sleepMillis + "ms"
+                + ", threads=" + threads + "}";
+    }
+
+    private static long parseBounded(String name, String value, long minimum) {
+        long parsed;
+        try {
+            parsed = Long.parseLong(value.trim());
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException("Option --" + name + " expects a whole number but got '" + value + "'", e);
+        }
+        if (parsed < minimum) {
+            throw new IllegalArgumentException("Option --" + name + " must be at least " + minimum + " but was " + parsed);
+        }
+        if (parsed > Integer.MAX_VALUE) {
+            throw new IllegalArgumentException("Option --" + name + " must be at most " + Integer.MAX_VALUE + " but was " + parsed);
+        }
+        return parsed;
     }
 }
