@@ -56,3 +56,6 @@ Things worth trying:
 Each round prints its result and duration; at the end the program prints a summary with wall time,
 busy time excluding sleeps, min/avg/p95/max round time and throughput. Those are naive numbers to
 hold next to whatever the profiler reports.
+
+## Remote change
+This line was added on the remote.
